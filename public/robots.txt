@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /vendor/
+Disallow: /api/
+Disallow: /uploads/
+
+Sitemap: https://apnamens.com/sitemap.xml
+
+
+
+

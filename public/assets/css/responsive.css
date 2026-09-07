@@ -1,0 +1,262 @@
+/**
+ * APNA-MENS - Responsive Breakpoints & Adaptations
+ * Desktop (1920px, 1440px, 1280px), Laptop (1024px), Tablet (768px), Mobile (430px, 390px, 375px)
+ */
+
+/* Prevents any potential horizontal scrolling across viewports */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* 1280px & Large Monitors */
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1140px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+
+  .trust-grid {
+    gap: 1.25rem;
+  }
+
+  .footer-grid {
+    gap: 2rem;
+  }
+}
+
+/* 1024px Laptops & Small Desktops */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  .footer-col-brand {
+    grid-column: span 3;
+  }
+
+  .promo-banner {
+    padding: 4rem 3rem;
+  }
+}
+
+/* 768px Tablets & Mobile Landscape */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .header-content {
+    height: 70px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  /* Mobile Drawer Navigation */
+  .nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(11, 11, 11, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.5rem;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: var(--z-dropdown);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  }
+
+  .nav.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-link {
+    height: auto;
+    font-size: 1rem;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .nav-link::after {
+    bottom: 0;
+  }
+
+  .navbar-search-input {
+    width: 130px;
+  }
+
+  .navbar-search-input:focus {
+    width: 170px;
+  }
+
+  .hero-slider, .hero-slide {
+    min-height: 70vh;
+  }
+
+  .hero-ctrl {
+    display: none;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .category-tile {
+    height: 260px;
+  }
+
+  .promo-banner {
+    padding: 3rem 2rem;
+  }
+
+  .promo-title {
+    font-size: 2.25rem;
+  }
+
+  .promo-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-col-brand {
+    grid-column: span 1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+/* 430px & Small Mobile Devices */
+@media (max-width: 480px) {
+  .navbar-search {
+    display: none; /* Mobile search button or toggle handles inline modal */
+  }
+
+  .logo-brand {
+    font-size: 1.25rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.6875rem;
+    letter-spacing: 0.15em;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9375rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .product-card-content {
+    padding: 0.875rem;
+  }
+
+  .product-card-title {
+    font-size: 0.8125rem;
+  }
+
+  .price-current {
+    font-size: 0.9375rem;
+  }
+
+  .price-old {
+    font-size: 0.75rem;
+  }
+
+  .product-card-actions {
+    flex-direction: column;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .category-tile {
+    height: 220px;
+    padding: 1.5rem;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .newsletter-input-group {
+    flex-direction: column;
+  }
+
+  .newsletter-btn {
+    width: 100%;
+  }
+}

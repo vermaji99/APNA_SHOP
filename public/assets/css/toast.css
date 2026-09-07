@@ -1,0 +1,63 @@
+/**
+ * Toast Notification Styles
+ */
+
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--bg-darker);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  min-width: 300px;
+  max-width: 400px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all var(--transition-base);
+  pointer-events: auto;
+  backdrop-filter: blur(10px);
+}
+
+.toast.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.toast-success {
+  border-left: 4px solid var(--success);
+}
+
+.toast-error {
+  border-left: 4px solid var(--error);
+}
+
+.toast-warning {
+  border-left: 4px solid var(--warning);
+}
+
+.toast-info {
+  border-left: 4px solid var(--info);
+}
+
+.toast span {
+  flex: 1;
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+}
+
+
+
+
