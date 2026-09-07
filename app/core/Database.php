@@ -12,7 +12,8 @@ class Database {
         $config = require APP_PATH . '/config/database.php';
         
         try {
-            $dsn = "mysql:host={$config['host']};dbname={$config['dbname']};charset={$config['charset']}";
+            $portStr = !empty($config['port']) ? ";port={$config['port']}" : "";
+            $dsn = "mysql:host={$config['host']}{$portStr};dbname={$config['dbname']};charset={$config['charset']}";
             $this->connection = new PDO($dsn, $config['username'], $config['password'], $config['options']);
         } catch (PDOException $e) {
             die("Database connection failed: " . $e->getMessage());
